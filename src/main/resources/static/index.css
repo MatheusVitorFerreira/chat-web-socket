@@ -1,122 +1,122 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background: #408080;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  border: 0;
-  overflow-x: hidden;
-}
-
-html, input, button {
-  font-family: 'Rubik', sans-serif;
-}
-.hidden {
-  display: none;
-}
-.container-form {
-  background-color: rgb(247, 247, 247);
-  width: 320px; /* Tamanho padrão de uma tela de login */
-  max-width: 90%; /* Limitando a largura máxima */
-  padding: 40px 30px; /* Espaçamento interno */
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.titulo-login {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 24px;
-  font-weight: 700;
-  color: #242424;
-}
-
-.form-control {
-  margin-bottom: 20px;
-}
-
-.form-control label {
-  display: block;
-  margin-bottom: 5px;
-  color: #242424;
-  font-weight: bold;
-}
-
-.form-control input {
-  border: 1px solid #3E445B;
-  border-radius: 5px;
-  outline: 0;
-  display: block;
-  font-size: 14px;
-  width: 100%;
-  padding: 10px;
-}
-
-.form button {
-  background-color: #1B6679;
-  border-radius: 5px;
-  color: #fff;
-  padding: 10px; /* Ajuste do tamanho do botão */
-  font-size: 16px;
-  font-weight: 600;
-  width: 100%; /* Botão com largura total */
-}
-.hidden {
-  display: none;
-}
-#chatContainer {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #fff;
-  box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
-  margin-top: 30px;
-  height: calc(100% - 60px);
-  max-height: 600px;
-  position: relative;
-}
-
-#chatMessages {
-  list-style-type: none;
-  background-color: #fff;
-  margin: 0;
-  overflow: auto;
-  overflow-y: scroll;
-  padding: 0 20px 0px 20px;
-  height: calc(100% - 150px);
-}
-
-#messageForm {
-  padding: 20px;
-}
-
-#chatMessages li {
-  line-height: 1.5rem;
-  padding: 10px 20px;
-  margin: 0;
-  border-bottom: 1px solid #f4f4f4;
-}
-
-#chatMessages li p {
-  margin: 0;
-}
-
-.chat-header {
-  text-align: center;
-  padding: 15px;
-  border-bottom: 1px solid #ececec;
-}
-
-.chat-header h2 {
-  margin: 0;
-  font-weight: 500;
-}
-
-
-
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background: #408080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    border: 0;
+    overflow-x: hidden;
+  }
+  
+  html, input, button {
+    font-family: 'Rubik', sans-serif;
+  }
+  .hidden {
+    display: none;
+  }
+  .container-form {
+    background-color: rgb(247, 247, 247);
+    width: 320px; /* Tamanho padrão de uma tela de login */
+    max-width: 90%; /* Limitando a largura máxima */
+    padding: 40px 30px; /* Espaçamento interno */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .titulo-login {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #242424;
+  }
+  
+  .form-control {
+    margin-bottom: 20px;
+  }
+  
+  .form-control label {
+    display: block;
+    margin-bottom: 5px;
+    color: #242424;
+    font-weight: bold;
+  }
+  
+  .form-control input {
+    border: 1px solid #3E445B;
+    border-radius: 5px;
+    outline: 0;
+    display: block;
+    font-size: 14px;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  .form button {
+    background-color: #1B6679;
+    border-radius: 5px;
+    color: #fff;
+    padding: 10px; /* Ajuste do tamanho do botão */
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%; /* Botão com largura total */
+  }
+  .hidden {
+    display: none;
+  }
+  #chatContainer {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #fff;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+    margin-top: 30px;
+    height: calc(100% - 60px);
+    max-height: 600px;
+    position: relative;
+  }
+  
+  #chatMessages {
+    list-style-type: none;
+    background-color: #fff;
+    margin: 0;
+    overflow: auto;
+    overflow-y: scroll;
+    padding: 0 20px 0px 20px;
+    height: calc(100% - 150px);
+  }
+  
+  #messageForm {
+    padding: 20px;
+  }
+  
+  #chatMessages li {
+    line-height: 1.5rem;
+    padding: 10px 20px;
+    margin: 0;
+    border-bottom: 1px solid #f4f4f4;
+  }
+  
+  #chatMessages li p {
+    margin: 0;
+  }
+  
+  .chat-header {
+    text-align: center;
+    padding: 15px;
+    border-bottom: 1px solid #ececec;
+  }
+  
+  .chat-header h2 {
+    margin: 0;
+    font-weight: 500;
+  }
+  
+  
+  
