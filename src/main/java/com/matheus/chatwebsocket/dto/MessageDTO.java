@@ -1,4 +1,4 @@
-package com.matheus.chatwebsocket.dto;
+package com.matheus.chatwebsocket.controller;
 
 import java.time.LocalDateTime;
 
