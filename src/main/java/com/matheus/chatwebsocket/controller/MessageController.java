@@ -10,7 +10,7 @@ import com.matheus.chatwebsocket.model.Message;
 @Controller
 public class MessageController {
 
-	@MessageMapping("/chatmessage")
+	@MessageMapping("/chat/message")
 	@SendTo("/chat")
 	public Message sendMessage(@Payload Message message) {
 		return message;

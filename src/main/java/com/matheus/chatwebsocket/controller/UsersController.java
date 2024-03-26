@@ -26,7 +26,7 @@ import com.matheus.chatwebsocket.service.UserService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping()
 public class UsersController {
 	@Autowired
 	private UserService userService;
@@ -34,29 +34,23 @@ public class UsersController {
 	@Autowired
 	TokenService tokenService;
 
-	@PostMapping("/login")
+	@PostMapping("/user/login")
 	public ResponseEntity<Object> login(@RequestBody @Valid AuthenticationDTO authenticationDTO) {
 		return userService.login(authenticationDTO);
 	}
 
-	@PostMapping("/register")
+	@PostMapping("/user/register")
 	public ResponseEntity<Object> register(@RequestBody @Valid RegisterDTO registerDTO) {
 		return userService.register(registerDTO);
 	}
 
-	/*@GetMapping("/login")
-	public String showLoginForm() {
-		System.out.println();
-		return "login";
-	}*/
-
-	@GetMapping(value = "/{id}")
+	@GetMapping(value = "/user/{id}")
 	public ResponseEntity<Users> getUserdeById(@PathVariable Long id) {
 		Users user = userService.findById(id);
 		return ResponseEntity.ok(user);
 	}
 
-	@GetMapping(value = "/page")
+	@GetMapping(value = "/user/page")
 	public ResponseEntity<Page<UsersDTO>> findPageEspecialidade(
 			@RequestParam(value = "page", defaultValue = "0") Integer page,
 			@RequestParam(value = "linesPerPage", defaultValue = "24") Integer linesPerPage) {
@@ -67,7 +61,7 @@ public class UsersController {
 		return ResponseEntity.ok().body(userDTOPag);
 	}
 
-	@GetMapping("/list")
+	@GetMapping("/user/list")
 	public ResponseEntity<List<UsersDTO>> findAllUsers() {
 		List<Users> users = userService.findAll();
 		List<UsersDTO> usersDTOList = users.stream().map(user -> new UsersDTO(user)).collect(Collectors.toList());

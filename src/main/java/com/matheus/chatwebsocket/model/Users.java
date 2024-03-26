@@ -16,7 +16,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
 
 @Entity
 public class Users implements UserDetails {
@@ -29,12 +28,7 @@ public class Users implements UserDetails {
 	@JsonIgnore
 	private String password;
 	private String role;
-	@OneToMany(mappedBy = "sender")
-	private List<Message> sentMessages;
-
-	@ManyToMany(mappedBy = "receiver")
-	private List<Message> receivedMessages;
-
+	
 	@ManyToMany(mappedBy = "users")
 	private List<RoomChat> rooms = new ArrayList<>();
 
@@ -88,28 +82,12 @@ public class Users implements UserDetails {
 		this.password = password;
 	}
 
-	public List<Message> getSentMessages() {
-		return sentMessages;
-	}
-
-	public void setSentMessages(List<Message> sentMessages) {
-		this.sentMessages = sentMessages;
-	}
-
 	public String getRole() {
 		return role;
 	}
 
 	public void setRole(String role) {
 		this.role = role;
-	}
-
-	public List<Message> getReceivedMessages() {
-		return receivedMessages;
-	}
-
-	public void setReceivedMessages(List<Message> receivedMessages) {
-		this.receivedMessages = receivedMessages;
 	}
 
 	@Override

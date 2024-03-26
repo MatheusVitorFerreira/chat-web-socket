@@ -21,23 +21,20 @@ import org.springframework.web.bind.annotation.RestController;
 import com.matheus.chatwebsocket.model.RoomChat;
 import com.matheus.chatwebsocket.service.RoomService;
 
-import jakarta.annotation.Resource;
-
 @RestController
-@RequestMapping("/chat")
+@RequestMapping
 public class RoomChatController {
 
 	@Autowired
 	private RoomService roomService;
 
-	@GetMapping("/message")
+	@GetMapping("/chat/message")
 	public ResponseEntity<Object> enterChatRoom() {
 	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 	    if (authentication == null || !authentication.isAuthenticated()) {
 	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Unauthorized");
 	    }
 	    RoomChat newRoom = roomService.createRoom();
-	    // Ler o conteúdo do arquivo HTML e retorná-lo
 	    try {
 	        ClassPathResource resource = new ClassPathResource("/static/chat.html");
 	        InputStream inputStream = resource.getInputStream();
@@ -54,7 +51,7 @@ public class RoomChatController {
 	    }
 	}
 
-	@PostMapping("/disconnect")
+	@PostMapping("/chat/disconnect")
 	public ResponseEntity<String> disconnectUserFromRoom(@RequestParam Long roomId, @RequestParam Long userId) {
 		roomService.removeUserFromRoom(roomId, userId);
 		return ResponseEntity.ok("User disconnected from the room successfully!");
