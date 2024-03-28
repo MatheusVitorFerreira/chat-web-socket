@@ -1,4 +1,4 @@
-// Define isConnected como false inicialmente
+
 let isConnected = false;
 
 const socket = new WebSocket('ws://localhost:8080/conect');
@@ -31,13 +31,12 @@ async function attemptLogin(event) {
       
         if (response.ok) {
             const data = await response.json();
-            console.log("Resposta do servidor:", data); // Adicione esta linha para verificar o conteúdo da resposta
+            console.log("Resposta do servidor:", data);
             const token = data.token;
-    
+            storeUsername(username);
             storeToken(token);
+            sessionStorage.setItem('username', username);
             console.log("Token recebido:", token);
-      
-            // Redireciona o usuário para a página do chat após o login bem-sucedido
             window.location.href = "/chat/message";
         } else {
             const error = await response.text();
@@ -52,4 +51,8 @@ async function attemptLogin(event) {
 
 function storeToken(token) {
     localStorage.setItem('Token', token);
+}
+
+function storeUsername(username) {
+    localStorage.setItem('username', username);
 }

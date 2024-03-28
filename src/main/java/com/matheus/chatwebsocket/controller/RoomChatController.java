@@ -18,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.matheus.chatwebsocket.model.RoomChat;
 import com.matheus.chatwebsocket.service.RoomService;
 
 @RestController
@@ -34,9 +33,8 @@ public class RoomChatController {
 	    if (authentication == null || !authentication.isAuthenticated()) {
 	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Unauthorized");
 	    }
-	    RoomChat newRoom = roomService.createRoom();
 	    try {
-	        ClassPathResource resource = new ClassPathResource("/static/chat.html");
+	        ClassPathResource resource = new ClassPathResource("/static/chat/chat.html");
 	        InputStream inputStream = resource.getInputStream();
 	        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 	        StringBuilder stringBuilder = new StringBuilder();
@@ -52,9 +50,9 @@ public class RoomChatController {
 	}
 
 	@PostMapping("/chat/disconnect")
-	public ResponseEntity<String> disconnectUserFromRoom(@RequestParam Long roomId, @RequestParam Long userId) {
-		roomService.removeUserFromRoom(roomId, userId);
-		return ResponseEntity.ok("User disconnected from the room successfully!");
-	}
+	public ResponseEntity<String> disconnectUser(@RequestParam String username) {
+	    roomService.removeUserFromRoom(username); 
+	    return ResponseEntity.ok("User disconnected from the room successfully!");
 
+	}
 }

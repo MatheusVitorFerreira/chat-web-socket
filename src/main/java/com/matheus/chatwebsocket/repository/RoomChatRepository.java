@@ -5,12 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.matheus.chatwebsocket.model.RoomChat;
 
-
 @Repository
 public interface RoomChatRepository extends JpaRepository<RoomChat, Long> {
+
 	
-	 
-	
-	 boolean existsById(Long roomchatId);
-	 
+
 }

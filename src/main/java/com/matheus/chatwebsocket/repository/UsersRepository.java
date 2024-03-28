@@ -12,13 +12,12 @@ import com.matheus.chatwebsocket.model.Users;
 @Repository
 public interface UsersRepository extends JpaRepository<Users, Long> {
 
-	UserDetails findByUsername(String username);
 
 	@Query("SELECT obj FROM Users obj ORDER BY obj.username ASC")
 	Page<Users> findAllByOrderByUserAsc(Pageable pageable);
 	
-	
-	
+
+	UserDetails findByUsername(String username);
 
 
 }

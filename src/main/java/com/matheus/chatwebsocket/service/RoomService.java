@@ -26,7 +26,6 @@ public class RoomService {
         RoomChat room = new RoomChat();
         return roomChatRepository.save(room);
     }
-
     public Optional<RoomChat> findRoomById(Long roomId) {
         return roomChatRepository.findById(roomId);
     }
@@ -41,7 +40,6 @@ public class RoomService {
             return v.isEmpty() ? null : v;
         });
     }
-
     public boolean CloseRoom(Long roomId) {
         return !usersInRoom.containsKey(roomId) || usersInRoom.get(roomId).isEmpty();
     }
@@ -49,4 +47,8 @@ public class RoomService {
     public void closeRoom(Long roomId) {
         roomChatRepository.deleteById(roomId);
     }
+	public void removeUserFromRoom(String username) {
+		// TODO Auto-generated method stub
+		
+	}
 }

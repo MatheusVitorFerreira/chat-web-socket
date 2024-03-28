@@ -1,14 +1,13 @@
-
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chat</title>
-  <link rel="stylesheet" href="chat.css"> 
+  <link rel="stylesheet" href="chat.css" type="text/css"> 
   <script src="socket.io.min.js" defer></script>
-  <script src="./stomp.min.js" defer></script>
-  <script src="/src/main/resources/static/display.js" type="text/javascript" defer></script>
+  <script src="stomp.min.js" defer></script>
+  <script src="display.js" type="text/javascript" defer></script>
 </head>
 <body>
   <div id="chatContainer">
@@ -23,6 +22,8 @@
       </form>
     </div>
   </div>
-
+  <div id="btnSair">
+    <button type="button" onclick="disconnectUser()">Sair</button>
+  </div>
 </body>
 </html>

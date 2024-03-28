@@ -8,19 +8,22 @@ body {
     background: #408080;
     font-family: 'Rubik', sans-serif;
     display: flex;
-    align-items: center; /* Centraliza verticalmente */
-    justify-content: center; /* Centraliza horizontalmente */
-    height: 100vh; /* Altura total da viewport */
-    border: 2px solid black; /* Adiciona uma borda preta */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    border: 2px solid black;
+    position: relative; /* Importante para posicionar o botão */
 }
 
 #chatContainer {
-    width: 90%; /* Largura definida */
-    max-width: 400px; /* Largura máxima ajustada para o tamanho padrão de um chat */
+    width: 90%;
+    max-width: 400px;
     background-color: #fff;
     box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
     border-radius: 10px;
     overflow: hidden;
+    margin-bottom: 10px; /* Adiciona espaço entre o chat e o botão */
 }
 
 .chatHeader {
@@ -33,7 +36,7 @@ body {
 #chatMessages {
     list-style-type: none;
     padding: 20px;
-    height: calc(100% - 120px); /* Altura ajustada para a área de mensagens */
+    height: 400px;
     overflow-y: auto;
 }
 
@@ -51,7 +54,7 @@ body {
     border-radius: 5px;
     margin-right: 10px;
     padding: 8px 50px;
-    color: #fff;
+    color: #0b0b0b;
 }
 
 .chatInput button {
@@ -61,4 +64,21 @@ body {
     border-radius: 5px;
     padding: 8px 22px;
     cursor: pointer;
+}
+
+#btnSair {
+    position: absolute; /* Posicionamento absoluto em relação à janela do navegador */
+    top: 10px; /* Distância do topo */
+    left: 10px; /* Distância da direita */
+}
+
+/* Adicionei estilos para o botão de sair */
+#btnSair button {
+    background-color: rgb(242, 252, 255); /* Cor de fundo */
+    color: #010101; /* Cor do texto */
+    border: 2px solid #424243; /* Cor da borda */
+    border-radius: 8px; /* Raio da borda */
+    padding: 12px 24px; /* Espaçamento interno */
+    cursor: pointer;
+    font-size: 16px; /* Tamanho da fonte */
 }

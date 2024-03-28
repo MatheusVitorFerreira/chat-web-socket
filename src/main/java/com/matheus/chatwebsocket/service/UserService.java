@@ -60,7 +60,10 @@ public class UserService implements UserDetailsService {
 	        return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
 	    }
 	}
-
+	public Users findUserByUsername(String username) {
+	    return (Users) userRepository.findByUsername(username);
+	}
+	
 	public ResponseEntity<Object> register(@RequestBody @Valid RegisterDTO registerDTO) {
 		if (this.userRepository.findByUsername(registerDTO.username()) != null)
 			return ResponseEntity.badRequest().build();
@@ -69,8 +72,8 @@ public class UserService implements UserDetailsService {
 		this.userRepository.save(newUser);
 		return ResponseEntity.ok().build();
 	}
-	 public Users findByName(String name) {
-	        return (Users) userRepository.findByUsername(name);
+	 public Users findByName(String username) {
+	        return (Users) userRepository.findByUsername(username);
 	    }
 
 	public Users findById(Long id) {

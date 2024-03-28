@@ -1,6 +1,5 @@
 package com.matheus.chatwebsocket.model;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
@@ -15,7 +14,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
 
 @Entity
 public class Users implements UserDetails {
@@ -28,9 +26,6 @@ public class Users implements UserDetails {
 	@JsonIgnore
 	private String password;
 	private String role;
-	
-	@ManyToMany(mappedBy = "users")
-	private List<RoomChat> rooms = new ArrayList<>();
 
 	public Users() {
 	}
@@ -54,24 +49,6 @@ public class Users implements UserDetails {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public void addRoom(RoomChat room) {
-		this.rooms.add(room);
-		room.getUsers().add(this);
-	}
-
-	public void removeRoom(RoomChat room) {
-		this.rooms.remove(room);
-		room.getUsers().remove(this);
-	}
-
-	public List<RoomChat> getRooms() {
-		return rooms;
-	}
-
-	public void setRooms(List<RoomChat> rooms) {
-		this.rooms = rooms;
 	}
 
 	public void setUsername(String username) {
