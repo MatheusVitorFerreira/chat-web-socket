@@ -18,8 +18,8 @@ public class DbService {
     PasswordEncoder passwordEncoder;
 
     public void instantiateDataBase() {
-        String encodedPassword = passwordEncoder.encode("123");
-        Users user1 = new Users("matheus", encodedPassword, UserRole.ADMIN);
+        String encodedPassword = passwordEncoder.encode("admin");
+        Users user1 = new Users("admin", encodedPassword, UserRole.ADMIN);
         userRepository.save(user1);
     }
 }
