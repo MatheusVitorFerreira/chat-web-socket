@@ -47,8 +47,4 @@ public class RoomService {
     public void closeRoom(Long roomId) {
         roomChatRepository.deleteById(roomId);
     }
-	public void removeUserFromRoom(String username) {
-		// TODO Auto-generated method stub
-		
-	}
 }
