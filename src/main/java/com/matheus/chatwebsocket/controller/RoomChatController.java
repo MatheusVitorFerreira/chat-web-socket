@@ -50,9 +50,8 @@ public class RoomChatController {
 	}
 
 	@PostMapping("/chat/disconnect")
-	public ResponseEntity<String> disconnectUser(@RequestParam String username) {
-	    roomService.removeUserFromRoom(username); 
+	public ResponseEntity<String> disconnectUser(@RequestParam Long roomId, @RequestParam Long userId) {
+	    roomService.removeUserFromRoom(roomId, userId); 
 	    return ResponseEntity.ok("User disconnected from the room successfully!");
-
 	}
 }
