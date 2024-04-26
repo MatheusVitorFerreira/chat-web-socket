@@ -3,7 +3,7 @@
 
 Este projeto é uma aplicação de chat em tempo real desenvolvida em Java com o framework Spring. Ele utiliza WebSocket para permitir a comunicação em tempo real entre os usuários e é protegido pelo Spring Security para garantir a autenticação e autorização adequadas.
 
-## Tecnologias Utilizadas
+## Tecnologias Utilizadas:
 * Java
 * Spring Boot
 * Spring Security
